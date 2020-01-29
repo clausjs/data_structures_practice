@@ -13,25 +13,7 @@ module.exports = class Node {
         return this.left;
     }
 
-    insertLeft(node) {
-        if (this.left) {
-            node.left = this.left;
-            this.left = node;
-        } else {
-            this.left = node;
-        }
-    }
-
     getRight() {
         return this.right;
-    }
-
-    insertRight(node) {
-        if (this.right) {
-            node.right = this.right;
-            this.right = node;
-        } else {
-            this.right = node;
-        }
     }
 }
