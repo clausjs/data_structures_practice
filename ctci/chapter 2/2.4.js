@@ -43,7 +43,7 @@ class LinkedList {
         if (this.head === null) {
             this.head = newNode;
         } else {
-            newNode.next = this.head.next;
+            newNode.next = this.head;
             this.head = newNode;
         }
     }
@@ -73,7 +73,7 @@ function partitionList(node, partitionValue, newList) {
     let head = node;
 
     if (newList.head !== null && head.data < partitionValue) {
-        newList.insertAtBeginning(head.data, head.next ? head.next.data : head.data);
+        newList.insertAtBeginning(head.data);
     } else {
         newList.insertAtEnd(head.data);
     }
