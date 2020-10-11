@@ -1,11 +1,6 @@
-class StackNode {
-    constructor(val, next) {
-        this.data = val || 0;
-        this.next = next || null;
-    }
-}
+const StackNode = require('./Node');
 
-class Stack {
+module.exports = class Stack {
     constructor() {
         this.head = null;
     }
@@ -22,8 +17,10 @@ class Stack {
     }
     push(val) {
         if (this.head === null) {
-            return this.emptyStackErr();
+            this.head = new StackNode(val);
+            return;
         }
+
         const tempNode = new StackNode(val, this.head);
         this.head = tempNode;
     }
