@@ -12,8 +12,9 @@ module.exports = class Stack {
             return this.emptyStackErr();
         }
 
-        const tempNode = new StackNode(this.head.data, this.head.next);
-        this.head = tempNode;
+        const tempNode = this.head;
+        this.head = new StackNode(this.head.next.data, this.head.next.next);
+        return this.head;
     }
     push(val) {
         if (this.head === null) {
