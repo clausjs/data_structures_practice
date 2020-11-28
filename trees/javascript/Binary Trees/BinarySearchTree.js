@@ -114,6 +114,6 @@ module.exports = class BinarySearchTree {
         }
     }
     remove(val) {
-        this.root = removeNode(this.root, val);
+        this.root = this.removeNode(this.root, val);
     }
 }
